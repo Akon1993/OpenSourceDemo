@@ -1,8 +1,9 @@
 package com.lihenggen.sentinel;
 
-//import com.lihenggen.sentinel.config.SentinelWebConfig;
+import com.zxy.base.sentinel.EnableSentinelWeb;
 import com.zxy.base.sentinel.SentinelWebConfig;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration;
 import org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
@@ -17,21 +18,24 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-@Import({
-        ServletWebServerFactoryAutoConfiguration.class,
-        DispatcherServletAutoConfiguration.class,
-        HttpEncodingAutoConfiguration.class,
-        HttpMessageConvertersAutoConfiguration.class,
-        JacksonAutoConfiguration.class,
-        MultipartAutoConfiguration.class,
-        PropertyPlaceholderAutoConfiguration.class,
-        WebMvcAutoConfiguration.class,
-        ErrorMvcAutoConfiguration.class,
-        WebSocketServletAutoConfiguration.class,
-        SentinelWebConfig.class,
-})
-@Configuration
-@ComponentScan
+//@Import({
+//        ServletWebServerFactoryAutoConfiguration.class,
+//        DispatcherServletAutoConfiguration.class,
+//        HttpEncodingAutoConfiguration.class,
+//        HttpMessageConvertersAutoConfiguration.class,
+//        JacksonAutoConfiguration.class,
+//        MultipartAutoConfiguration.class,
+//        PropertyPlaceholderAutoConfiguration.class,
+//        WebMvcAutoConfiguration.class,
+//        ErrorMvcAutoConfiguration.class,
+//        WebSocketServletAutoConfiguration.class,
+//        SentinelWebConfig.class,
+//})
+//@Configuration
+//@ComponentScan
+
+@EnableSentinelWeb
+@SpringBootApplication
 public class ZxySentinelApplication {
 
     public static void main(String[] args) {

@@ -1,37 +1,14 @@
 package com.lihenggen.sentinel.controller;
 
-import com.alibaba.csp.sentinel.Entry;
-import com.alibaba.csp.sentinel.SphU;
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.LocalDateTime;
 
 @RestController
 public class TestController {
 
-
-    @GetMapping("/hello")
-    public String hello() {
-        Entry entry = null;
-        try {
-            entry = SphU.entry("demo-hello-api");
-            return "ok: " + LocalDateTime.now();
-        } catch (BlockException e1) {
-            return "helloBlockHandler: " + LocalDateTime.now();
-        } finally {
-            if (entry != null) {
-                entry.exit();
-            }
-        }
-    }
-
-    @GetMapping("/test")
-//    @SentinelResource("test")
-    public String test() {
-        return "test";
+    @GetMapping("/test1")
+    public String test1() {
+        return "test1";
     }
 
     @GetMapping("/test2")
@@ -44,11 +21,21 @@ public class TestController {
         return "test3";
     }
 
-    @GetMapping("/testLongTime")
-    public String testLongTime() {
+    @GetMapping("/testLongTime1")
+    public String testLongTime1() {
         try {
-            Thread.sleep(5_000L);
-        } catch (Exception e) {}
-        return "testLongTime";
+            Thread.sleep(1_000L);
+        } catch (Exception e) {
+        }
+        return "testLongTime1";
+    }
+
+    @GetMapping("/testLongTime2")
+    public String testLongTime2() {
+        try {
+            Thread.sleep(3_000L);
+        } catch (Exception e) {
+        }
+        return "testLongTime2";
     }
 }
