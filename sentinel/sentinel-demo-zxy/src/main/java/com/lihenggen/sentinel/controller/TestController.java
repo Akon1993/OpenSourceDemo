@@ -1,10 +1,20 @@
 package com.lihenggen.sentinel.controller;
 
+import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
+import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class TestController {
+
+    @GetMapping("/rules")
+    public List<FlowRule> rules() {
+        List<FlowRule> rules = FlowRuleManager.getRules();
+        return rules;
+    }
 
     @GetMapping("/test1")
     public String test1() {
@@ -24,7 +34,7 @@ public class TestController {
     @GetMapping("/testLongTime1")
     public String testLongTime1() {
         try {
-            Thread.sleep(1_000L);
+            Thread.sleep(200L);
         } catch (Exception e) {
         }
         return "testLongTime1";
@@ -37,5 +47,14 @@ public class TestController {
         } catch (Exception e) {
         }
         return "testLongTime2";
+    }
+
+    @GetMapping("/testLongTime3")
+    public String testLongTime3() {
+        try {
+            Thread.sleep(20_000L);
+        } catch (Exception e) {
+        }
+        return "testLongTime3";
     }
 }
