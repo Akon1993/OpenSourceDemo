@@ -7,6 +7,6 @@ import lombok.Data;
  */
 @Data
 public class SimpleParam {
-    private Integer a;
+    private Integer code;
     private String b;
 }
