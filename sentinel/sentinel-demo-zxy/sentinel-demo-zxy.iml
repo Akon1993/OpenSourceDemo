@@ -151,5 +151,6 @@
     <orderEntry type="library" name="Maven: org.glassfish:javax.el:3.0.1-b09" level="project" />
     <orderEntry type="library" name="Maven: com.zxy.common:common-serialize:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.caucho:hessian:4.0.51" level="project" />
+    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.5.6" level="project" />
   </component>
 </module>

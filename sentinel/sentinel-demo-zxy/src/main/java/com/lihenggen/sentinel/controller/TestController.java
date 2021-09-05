@@ -34,7 +34,7 @@ public class TestController {
     @GetMapping("/testLongTime1")
     public String testLongTime1() {
         try {
-            Thread.sleep(200L);
+            Thread.sleep(20L);
         } catch (Exception e) {
         }
         return "testLongTime1";
@@ -43,7 +43,7 @@ public class TestController {
     @GetMapping("/testLongTime2")
     public String testLongTime2() {
         try {
-            Thread.sleep(3_000L);
+            Thread.sleep(200L);
         } catch (Exception e) {
         }
         return "testLongTime2";
