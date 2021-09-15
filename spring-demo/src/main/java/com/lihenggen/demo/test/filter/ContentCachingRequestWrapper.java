@@ -60,8 +60,9 @@ public class ContentCachingRequestWrapper extends HttpServletRequestWrapper{
         public RequestCachingInputStream(byte[] bytes) {
             inputStream = new ByteArrayInputStream(bytes);
         }
+
         @Override
-        public int read() throws IOException {
+        public int read() {
             return inputStream.read();
         }
 
