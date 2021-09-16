@@ -21,11 +21,6 @@
             <artifactId>guava</artifactId>
             <version>30.1.1-jre</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.hzero.starter</groupId>
-            <artifactId>hzero-starter-lock</artifactId>
-        </dependency>
     </dependencies>
 
     <properties>
