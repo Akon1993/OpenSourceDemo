@@ -5,6 +5,8 @@ import com.lihenggen.demo.test.param.SimpleParam;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpRequest;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,8 +35,8 @@ public class TestController implements EnvironmentAware {
 
     @GetMapping("/testEnv")
     @ResponseBody
-    public String testEnv(){
-        return env.getProperty("env.test");
+    public User testEnv(@AuthenticationPrincipal User user){
+        return user;
     }
 
     @PostMapping("/testPost")
