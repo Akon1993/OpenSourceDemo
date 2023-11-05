@@ -1,7 +1,6 @@
 package com.zw.annodemo.controller;
 
 import com.zw.annodemo.annotation.TestAnnotation;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
